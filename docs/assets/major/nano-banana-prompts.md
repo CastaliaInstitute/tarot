@@ -1,6 +1,6 @@
 # Nano Banana Major Arcana Prompt Sheet
 
-Use model `gemini-3.1-flash-image-preview` or the currently configured Nano Banana image model.
+Use model `gemini-2.5-flash-image` or the currently configured Nano Banana image model.
 
 Shared prompt:
 
