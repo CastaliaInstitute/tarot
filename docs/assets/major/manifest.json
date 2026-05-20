@@ -1,0 +1,198 @@
+{
+  "deck": "rider-waite-round",
+  "arcana": "major",
+  "target": "Astrolabe 466x466 round display",
+  "variants": {
+    "full": {
+      "diameter_px": 466,
+      "path": "full"
+    },
+    "half": {
+      "diameter_px": 233,
+      "path": "half"
+    }
+  },
+  "generator": {
+    "script": "scripts/build_round_tarot_major.py",
+    "source": "/Users/danielmcshan/GitHub/LAIKA/rider-waite-tarot",
+    "note": "Local circular composition from Rider-Waite source images. Nano Banana generation was not run because no Gemini credential is configured locally."
+  },
+  "cards": [
+    {
+      "number": 0,
+      "title": "The Fool",
+      "slug": "fool",
+      "source": "/Users/danielmcshan/GitHub/LAIKA/rider-waite-tarot/major_arcana_fool.png",
+      "full": "full/00-fool.png",
+      "half": "half/00-fool.png"
+    },
+    {
+      "number": 1,
+      "title": "The Magician",
+      "slug": "magician",
+      "source": "/Users/danielmcshan/GitHub/LAIKA/rider-waite-tarot/major_arcana_magician.png",
+      "full": "full/01-magician.png",
+      "half": "half/01-magician.png"
+    },
+    {
+      "number": 2,
+      "title": "The High Priestess",
+      "slug": "priestess",
+      "source": "/Users/danielmcshan/GitHub/LAIKA/rider-waite-tarot/major_arcana_priestess.png",
+      "full": "full/02-priestess.png",
+      "half": "half/02-priestess.png"
+    },
+    {
+      "number": 3,
+      "title": "The Empress",
+      "slug": "empress",
+      "source": "/Users/danielmcshan/GitHub/LAIKA/rider-waite-tarot/major_arcana_empress.png",
+      "full": "full/03-empress.png",
+      "half": "half/03-empress.png"
+    },
+    {
+      "number": 4,
+      "title": "The Emperor",
+      "slug": "emperor",
+      "source": "/Users/danielmcshan/GitHub/LAIKA/rider-waite-tarot/major_arcana_emperor.png",
+      "full": "full/04-emperor.png",
+      "half": "half/04-emperor.png"
+    },
+    {
+      "number": 5,
+      "title": "The Hierophant",
+      "slug": "hierophant",
+      "source": "/Users/danielmcshan/GitHub/LAIKA/rider-waite-tarot/major_arcana_hierophant.png",
+      "full": "full/05-hierophant.png",
+      "half": "half/05-hierophant.png"
+    },
+    {
+      "number": 6,
+      "title": "The Lovers",
+      "slug": "lovers",
+      "source": "/Users/danielmcshan/GitHub/LAIKA/rider-waite-tarot/major_arcana_lovers.png",
+      "full": "full/06-lovers.png",
+      "half": "half/06-lovers.png"
+    },
+    {
+      "number": 7,
+      "title": "The Chariot",
+      "slug": "chariot",
+      "source": "/Users/danielmcshan/GitHub/LAIKA/rider-waite-tarot/major_arcana_chariot.png",
+      "full": "full/07-chariot.png",
+      "half": "half/07-chariot.png"
+    },
+    {
+      "number": 8,
+      "title": "Strength",
+      "slug": "strength",
+      "source": "/Users/danielmcshan/GitHub/LAIKA/rider-waite-tarot/major_arcana_strength.png",
+      "full": "full/08-strength.png",
+      "half": "half/08-strength.png"
+    },
+    {
+      "number": 9,
+      "title": "The Hermit",
+      "slug": "hermit",
+      "source": "/Users/danielmcshan/GitHub/LAIKA/rider-waite-tarot/major_arcana_hermit.png",
+      "full": "full/09-hermit.png",
+      "half": "half/09-hermit.png"
+    },
+    {
+      "number": 10,
+      "title": "Wheel of Fortune",
+      "slug": "fortune",
+      "source": "/Users/danielmcshan/GitHub/LAIKA/rider-waite-tarot/major_arcana_fortune.png",
+      "full": "full/10-fortune.png",
+      "half": "half/10-fortune.png"
+    },
+    {
+      "number": 11,
+      "title": "Justice",
+      "slug": "justice",
+      "source": "/Users/danielmcshan/GitHub/LAIKA/rider-waite-tarot/major_arcana_justice.png",
+      "full": "full/11-justice.png",
+      "half": "half/11-justice.png"
+    },
+    {
+      "number": 12,
+      "title": "The Hanged Man",
+      "slug": "hanged",
+      "source": "/Users/danielmcshan/GitHub/LAIKA/rider-waite-tarot/major_arcana_hanged.png",
+      "full": "full/12-hanged.png",
+      "half": "half/12-hanged.png"
+    },
+    {
+      "number": 13,
+      "title": "Death",
+      "slug": "death",
+      "source": "/Users/danielmcshan/GitHub/LAIKA/rider-waite-tarot/major_arcana_death.png",
+      "full": "full/13-death.png",
+      "half": "half/13-death.png"
+    },
+    {
+      "number": 14,
+      "title": "Temperance",
+      "slug": "temperance",
+      "source": "/Users/danielmcshan/GitHub/LAIKA/rider-waite-tarot/major_arcana_temperance.png",
+      "full": "full/14-temperance.png",
+      "half": "half/14-temperance.png"
+    },
+    {
+      "number": 15,
+      "title": "The Devil",
+      "slug": "devil",
+      "source": "/Users/danielmcshan/GitHub/LAIKA/rider-waite-tarot/major_arcana_devil.png",
+      "full": "full/15-devil.png",
+      "half": "half/15-devil.png"
+    },
+    {
+      "number": 16,
+      "title": "The Tower",
+      "slug": "tower",
+      "source": "/Users/danielmcshan/GitHub/LAIKA/rider-waite-tarot/major_arcana_tower.png",
+      "full": "full/16-tower.png",
+      "half": "half/16-tower.png"
+    },
+    {
+      "number": 17,
+      "title": "The Star",
+      "slug": "star",
+      "source": "/Users/danielmcshan/GitHub/LAIKA/rider-waite-tarot/major_arcana_star.png",
+      "full": "full/17-star.png",
+      "half": "half/17-star.png"
+    },
+    {
+      "number": 18,
+      "title": "The Moon",
+      "slug": "moon",
+      "source": "/Users/danielmcshan/GitHub/LAIKA/rider-waite-tarot/major_arcana_moon.png",
+      "full": "full/18-moon.png",
+      "half": "half/18-moon.png"
+    },
+    {
+      "number": 19,
+      "title": "The Sun",
+      "slug": "sun",
+      "source": "/Users/danielmcshan/GitHub/LAIKA/rider-waite-tarot/major_arcana_sun.png",
+      "full": "full/19-sun.png",
+      "half": "half/19-sun.png"
+    },
+    {
+      "number": 20,
+      "title": "Judgement",
+      "slug": "judgement",
+      "source": "/Users/danielmcshan/GitHub/LAIKA/rider-waite-tarot/major_arcana_judgement.png",
+      "full": "full/20-judgement.png",
+      "half": "half/20-judgement.png"
+    },
+    {
+      "number": 21,
+      "title": "The World",
+      "slug": "world",
+      "source": "/Users/danielmcshan/GitHub/LAIKA/rider-waite-tarot/major_arcana_world.png",
+      "full": "full/21-world.png",
+      "half": "half/21-world.png"
+    }
+  ]
+}
