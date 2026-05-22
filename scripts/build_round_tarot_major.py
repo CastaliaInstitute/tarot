@@ -4,14 +4,15 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFilter, ImageOps
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE_DIR = Path("/Users/danielmcshan/GitHub/LAIKA/rider-waite-tarot")
 OUT_DIR = ROOT / "docs/assets/major"
+SOURCE_DIR = Path(os.getenv("TAROT_SOURCE_DIR", str(ROOT / "source/rider-waite/major")))
 
 CARDS = [
     (0, "The Fool", "fool"),
@@ -96,16 +97,23 @@ def main() -> int:
             "full": {"diameter_px": 466, "path": "full"},
             "half": {"diameter_px": 233, "path": "half"},
         },
+        "source": {
+            "name": "Rider-Waite-Smith Major Arcana",
+            "path": "source/rider-waite/major",
+        },
         "generator": {
             "script": "scripts/build_round_tarot_major.py",
-            "source": str(SOURCE_DIR),
             "note": "Local circular composition from Rider-Waite source images. Nano Banana generation was not run because no Gemini credential is configured locally.",
         },
         "cards": [],
     }
 
     for number, title, slug in CARDS:
-        src_path = SOURCE_DIR / f"major_arcana_{slug}.png"
+        src_path = SOURCE_DIR / f"{number:02d}-{slug}.jpg"
+        if not src_path.exists():
+            src_path = SOURCE_DIR / f"{number:02d}-{slug}.png"
+        if not src_path.exists():
+            src_path = SOURCE_DIR / f"major_arcana_{slug}.png"
         if not src_path.exists():
             raise FileNotFoundError(src_path)
 
@@ -121,7 +129,7 @@ def main() -> int:
                 "number": number,
                 "title": title,
                 "slug": slug,
-                "source": str(src_path),
+                "source": f"source/rider-waite/major/{number:02d}-{slug}.jpg",
                 "full": f"full/{filename}",
                 "half": f"half/{filename}",
             }

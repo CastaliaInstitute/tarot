@@ -19,7 +19,7 @@ from PIL import Image, ImageDraw, ImageOps
 ROOT = Path(__file__).resolve().parents[1]
 OUT_DIR = ROOT / "docs/assets/major"
 RAW_DIR = OUT_DIR / "nanobanana/raw"
-SOURCE_DIR = Path(os.getenv("RIDER_WAITE_SOURCE_DIR", "/Users/danielmcshan/GitHub/LAIKA/rider-waite-tarot"))
+SOURCE_DIR = Path(os.getenv("TAROT_SOURCE_DIR", str(ROOT / "source/rider-waite/major")))
 API_ROOT = "https://generativelanguage.googleapis.com/v1beta/models"
 
 CARDS = [
@@ -89,14 +89,19 @@ def postprocess(src_path: Path, full_path: Path, half_path: Path) -> None:
         half.save(half_path, optimize=True)
 
 
-def source_path_for(slug: str) -> Path:
-    return SOURCE_DIR / f"major_arcana_{slug}.png"
+def source_path_for(number: int, slug: str) -> Path:
+    for name in (f"{number:02d}-{slug}.jpg", f"{number:02d}-{slug}.png", f"major_arcana_{slug}.png"):
+        source = SOURCE_DIR / name
+        if source.exists():
+            return source
+    return SOURCE_DIR / f"{number:02d}-{slug}.jpg"
 
 
 def image_part(path: Path) -> dict:
+    mime = "image/jpeg" if path.suffix.lower() in (".jpg", ".jpeg") else "image/png"
     return {
         "inlineData": {
-            "mimeType": "image/png",
+            "mimeType": mime,
             "data": base64.b64encode(path.read_bytes()).decode("ascii"),
         }
     }
@@ -160,8 +165,8 @@ def write_manifest(model: str, cards: list[tuple[int, str, str]]) -> None:
             "script": "scripts/generate_nano_banana_major.py",
             "model": model,
             "generated_at": datetime.now(timezone.utc).isoformat(),
-            "source": str(SOURCE_DIR),
-            "note": "Generated with Gemini Nano Banana from Rider-Waite source-image references, then resized and circular-alpha masked for Astrolabe.",
+            "source": "source/rider-waite/major",
+            "note": "Generated with Gemini Nano Banana from the tarot repo's vendored Rider-Waite-Smith Major Arcana references. The prompt removes the rectangular card frame and extends each scene to the circular edge.",
         },
         "cards": [
             {
@@ -197,7 +202,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--card", default="all", help="all, a slug, a number, or comma-separated values")
     parser.add_argument("--model", default=os.getenv("GEMINI_IMAGE_MODEL", "gemini-2.5-flash-image"))
-    parser.add_argument("--source-dir", default=str(SOURCE_DIR), help="Directory containing major_arcana_<slug>.png")
+    parser.add_argument("--source-dir", default=str(SOURCE_DIR), help="Directory containing {number}-{slug}.jpg source images")
     parser.add_argument("--sleep", type=float, default=2.0, help="Seconds between API calls")
     parser.add_argument("--dry-run", action="store_true", help="Print prompts without calling Gemini")
     args = parser.parse_args()
@@ -215,7 +220,7 @@ def main() -> int:
         raw_path = RAW_DIR / filename
         full_path = OUT_DIR / "full" / filename
         half_path = OUT_DIR / "half" / filename
-        source_path = source_path_for(slug)
+        source_path = source_path_for(number, slug)
         if not source_path.exists():
             raise FileNotFoundError(source_path)
         print(f"[{index}/{len(cards)}] {title} -> {filename}")

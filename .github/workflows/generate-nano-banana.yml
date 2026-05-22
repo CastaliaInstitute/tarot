@@ -16,10 +16,6 @@ on:
         required: true
         type: boolean
         default: true
-      source_repository:
-        description: "Repository containing rider-waite-tarot source images"
-        required: true
-        default: "dcmcshan/LAIKA"
 
 permissions:
   contents: write
@@ -37,13 +33,6 @@ jobs:
         with:
           path: tarot
 
-      - name: Checkout Rider-Waite source images
-        uses: actions/checkout@v4
-        with:
-          repository: ${{ inputs.source_repository }}
-          path: laika
-          token: ${{ secrets.LAIKA_REPO_TOKEN || github.token }}
-
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -56,7 +45,6 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY || secrets.GOOGLE_GEMINI_API_KEY }}
           GEMINI_IMAGE_MODEL: ${{ inputs.model }}
-          RIDER_WAITE_SOURCE_DIR: ${{ github.workspace }}/laika/rider-waite-tarot
         run: |
           python scripts/generate_nano_banana_major.py \
             --card "${{ inputs.card }}" \

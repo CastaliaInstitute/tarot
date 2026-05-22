@@ -10,8 +10,9 @@ Site: https://tarot.castalia.institute/
 - Major Arcana half-diameter display: `docs/assets/major/half/*.png` at 233x233 RGBA.
 - Manifest: `docs/assets/major/manifest.json`.
 - Nano Banana prompt sheet: `docs/assets/major/nano-banana-prompts.md`.
+- Vendored Rider-Waite-Smith Major Arcana source references: `source/rider-waite/major/*.jpg`.
 
-The current assets are local circular compositions from the Rider-Waite source deck. The prompt sheet captures the intended Nano Banana recomposition pass once Gemini credentials are available.
+The current assets are local circular compositions from the repo's vendored Rider-Waite source deck. The Nano Banana pass uses those local source references to remove the rectangular card frame and extend each scene to the circular edge.
 
 ## Generate With Nano Banana
 
