@@ -54,6 +54,9 @@ Create a generated circular, round-watch version of the Major Arcana card "{titl
 Output requirements:
 - Square image for a 466x466 round display.
 - The artwork must be newly recomposed for a circle, not a crop and not a rectangular card pasted into a circle.
+- Remove the rectangular card frame, title strip, inner border, and printed caption from the source image.
+- Extend the source scene outward so the landscape, sky, floor, architecture, vegetation, water, and atmosphere continue naturally to the circular edge.
+- Do not leave a visible rectangle, card mat, border shadow, framed poster, or blurred duplicate of the original card behind the subject.
 - Preserve the source card's exact subject matter: character count, posture, gestures, key objects, symbolic animals/plants/tools, landscape, color identity, and visual hierarchy.
 - Keep the same narrative content as the source card while adapting placement and proportions for a circular composition.
 - Important symbols must sit inside the safe central 88% diameter.

@@ -10,6 +10,9 @@ Create a circular, round-watch version of the Rider-Waite-Smith Major Arcana car
 Output requirements:
 - Square image for a 466x466 round display.
 - The artwork must fill the full circular composition, not a rectangular card pasted into a circle.
+- Remove the rectangular card frame, title strip, inner border, and printed caption from the source image.
+- Extend the source scene outward so the landscape, sky, floor, architecture, vegetation, water, and atmosphere continue naturally to the circular edge.
+- Do not leave a visible rectangle, card mat, border shadow, framed poster, or blurred duplicate of the original card behind the subject.
 - Preserve the card's canonical Rider-Waite-Smith symbolism, character count, posture, key objects, and color identity.
 - Recompose the scene naturally for a circular crop with important symbols inside the safe central 88% diameter.
 - No modern objects, no extra labels, no watermark, no border text.
